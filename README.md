@@ -1,4 +1,9 @@
 # Tidy Human Activity Data from Smartphones Dataset
+This is a tidy dataset derived from
+
+[Human Activity Recognition Using Smartphones Dataset Version 1.0](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+
+[Raw Data used to build this tidy dataset](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 
 ##Variables (Measurements)
 
