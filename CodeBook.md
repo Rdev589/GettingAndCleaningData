@@ -1,5 +1,5 @@
 # Tidy Human Activity Data from Smartphones Dataset
-This is a tidy dataset derived from
+This is a wide tidy dataset derived from
 
 [Human Activity Recognition Using Smartphones Dataset Version 1.0](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
@@ -7,19 +7,20 @@ This is a tidy dataset derived from
 
 ##Variables (Measurements)
 
-###Variable Summary Table
-This is a summary of all of the variables in this tidy dataset.  
+###Variable Transform Table
+This table maps the tidy variables (columns) to the raw variables (columns).
 
-The Variable column defines the root name for a group of related variables.
+The "Variable Type" column annotates whether this variable group is a scalar (single value) or vector (X,Y,Z components).  
+The "Raw Variable" column is the name of the variable from the original dataset.  The "Raw Col" column is the column position 
+from the original dataset.
 
-The Spatial column annotates whether this variable group is a scalar (single value) or vector (X,Y,Z components).  
+The "Derived Type" column annotates the method used to derive this group of variables.  "FFT" means this variable set was produced with a Fast Fourier Transform on the time domain measurements.  "time" in this column means the variables were created directly from time domain signals.
 
-The Derived column annotates the method used to derive this group of variables.  "FFT" means this variable set was produced with a Fast Fourier Transform on the time domain measurements.  "time" in this column means the variables were created directly from time domain signals.
 
-|tidy col|tidy variable|raw col|raw variable|variable type|derived type|units|description|
+|Tidy Col|Tidy Variable|Raw Col|Raw Variable|Variable Type|Derived Type|Units|Description|
 ----|--------|----|----------|---------|--------|-----|---------------
-|1|Subject |1| tBodyAcc-mean()-X | id |  | unitary | |
-|2|Activity |1| tBodyAcc-mean()-X | string | |  | |
+|1|Subject |1| tBodyAcc-mean()-X | id |  | unitary |The subject id from the original data, values 1-30 |
+|2|Activity |1| tBodyAcc-mean()-X | string | |  | The string activity name|
 |3|TimeBodyAccMeanX |1| tBodyAcc-mean()-X | X,Y,Z | Time | m/s^2 | |
 |4|TimeBodyAccMeanY |2| tBodyAcc-mean()-Y | X,Y,Z | Time | m/s^2 |  |
 |5|TimeBodyAccMeanZ |3| tBodyAcc-mean()-Z | X,Y,Z | Time | m/s^2 |  |
@@ -60,29 +61,30 @@ The Derived column annotates the method used to derive this group of variables. 
 |40|TimeBodyGyroMagStdDev |241| tBodyGyroMag-std() | scalar | Time | m/s^2 |  |
 |41|TimeBodyGyroJerkMagMean |253| tBodyGyroJerkMag-mean() | scalar | Time | m/s^2 |  |
 |42|TimeBodyGyroJerkMagStdDev |254| tBodyGyroJerkMag-std() | scalar | Time | m/s^2 |  |
-|43|FrequencyBodyAccMeanX |266| fBodyAcc-mean()-X | X,Y,Z | Frequency | m/s^2 |  |
-|44|FrequencyBodyAccMeanY |267| fBodyAcc-mean()-Y | X,Y,Z | Frequency | m/s^2 |  |
-|45|FrequencyBodyAccMeanZ |268| fBodyAcc-mean()-Z | X,Y,Z | Frequency | m/s^2 |  |
-|46|FrequencyBodyAccStdDevX |269| fBodyAcc-std()-X | X,Y,Z | Frequency | m/s^2 |  |
-|47|FrequencyBodyAccStdDevY |270| fBodyAcc-std()-Y | X,Y,Z | Frequency | m/s^2 |  |
-|48|FrequencyBodyAccStdDevZ |271| fBodyAcc-std()-Z | X,Y,Z | Frequency | m/s^2 |  |
-|49|FrequencyBodyAccJerkMeanX |345| fBodyAccJerk-mean()-X | X,Y,Z | Frequency | m/s^2 |  |
-|50|FrequencyBodyAccJerkMeanY |346| fBodyAccJerk-mean()-Y | X,Y,Z | Frequency | m/s^2 |  |
-|51|FrequencyBodyAccJerkMeanZ |347| fBodyAccJerk-mean()-Z | X,Y,Z | Frequency | m/s^2 |  |
-|52|FrequencyBodyAccJerkStdDevX |348| fBodyAccJerk-std()-X | X,Y,Z | Frequency | m/s^2 |  |
-|53|FrequencyBodyAccJerkStdDevY |349| fBodyAccJerk-std()-Y | X,Y,Z | Frequency | m/s^2 |  |
-|54|FrequencyBodyAccJerkStdDevZ |350| fBodyAccJerk-std()-Z | X,Y,Z | Frequency | m/s^2 |  |
-|55|FrequencyBodyGyroMeanX |424| fBodyGyro-mean()-X | X,Y,Z | Frequency | m/s^2 |  |
-|56|FrequencyBodyGyroMeanY |425| fBodyGyro-mean()-Y | X,Y,Z | Frequency | m/s^2 |  |
-|57|FrequencyBodyGyroMeanZ |426| fBodyGyro-mean()-Z | X,Y,Z | Frequency | m/s^2 |  |
-|58|FrequencyBodyGyroStdDevX |427| fBodyGyro-std()-X | X,Y,Z | Frequency | m/s^2 |  |
-|59|FrequencyBodyGyroStdDevY |428| fBodyGyro-std()-Y | X,Y,Z | Frequency | m/s^2 |  |
-|60|FrequencyBodyGyroStdDevZ |429| fBodyGyro-std()-Z | X,Y,Z | Frequency | m/s^2 |  |
-|61|FrequencyBodyAccMagMean |503| fBodyAccMag-mean() | scalar | Frequency | m/s^2 |  |
-|62|FrequencyBodyAccMagStdDev |504| fBodyAccMag-std() | scalar | Frequency | m/s^2 |  |
-|63|FrequencyBodyAccJerkMagMean |516| fBodyBodyAccJerkMag-mean() | scalar | Frequency | m/s^2 |  |
-|64|FrequencyBodyAccJerkMagStdDev |517| fBodyBodyAccJerkMag-std() | scalar | Frequency | m/s^2 |  |
-|65|FrequencyBodyGyroMagMean |529| fBodyBodyGyroMag-mean() | scalar | Frequency | m/s^2 |  |
-|66|FrequencyBodyGyroMagStdDev |530| fBodyBodyGyroMag-std() | scalar | Frequency | m/s^2 |  |
-|67|FrequencyBodyGyroJerkMagMean |542| fBodyBodyGyroJerkMag-mean() | scalar | Frequency | m/s^2 |  |
-|68|FrequencyBodyGyroJerkMagStdDev |543| fBodyBodyGyroJerkMag-std() | scalar | Frequency | m/s^2 |  |
+|43|FrequencyBodyAccMeanX |266| fBodyAcc-mean()-X | X,Y,Z | Frequency | Hz |  |
+|44|FrequencyBodyAccMeanY |267| fBodyAcc-mean()-Y | X,Y,Z | Frequency | Hz |  |
+|45|FrequencyBodyAccMeanZ |268| fBodyAcc-mean()-Z | X,Y,Z | Frequency | Hz |  |
+|46|FrequencyBodyAccStdDevX |269| fBodyAcc-std()-X | X,Y,Z | Frequency | Hz |  |
+|47|FrequencyBodyAccStdDevY |270| fBodyAcc-std()-Y | X,Y,Z | Frequency | Hz |  |
+|48|FrequencyBodyAccStdDevZ |271| fBodyAcc-std()-Z | X,Y,Z | Frequency | Hz |  |
+|49|FrequencyBodyAccJerkMeanX |345| fBodyAccJerk-mean()-X | X,Y,Z | Frequency | Hz |  |
+|50|FrequencyBodyAccJerkMeanY |346| fBodyAccJerk-mean()-Y | X,Y,Z | Frequency | Hz |  |
+|51|FrequencyBodyAccJerkMeanZ |347| fBodyAccJerk-mean()-Z | X,Y,Z | Frequency | Hz |  |
+|52|FrequencyBodyAccJerkStdDevX |348| fBodyAccJerk-std()-X | X,Y,Z | Frequency | Hz |  |
+|53|FrequencyBodyAccJerkStdDevY |349| fBodyAccJerk-std()-Y | X,Y,Z | Frequency | Hz |  |
+|54|FrequencyBodyAccJerkStdDevZ |350| fBodyAccJerk-std()-Z | X,Y,Z | Frequency | Hz |  |
+|55|FrequencyBodyGyroMeanX |424| fBodyGyro-mean()-X | X,Y,Z | Frequency | Hz |  |
+|56|FrequencyBodyGyroMeanY |425| fBodyGyro-mean()-Y | X,Y,Z | Frequency | Hz |  |
+|57|FrequencyBodyGyroMeanZ |426| fBodyGyro-mean()-Z | X,Y,Z | Frequency | Hz |  |
+|58|FrequencyBodyGyroStdDevX |427| fBodyGyro-std()-X | X,Y,Z | Frequency | Hz |  |
+|59|FrequencyBodyGyroStdDevY |428| fBodyGyro-std()-Y | X,Y,Z | Frequency | Hz |  |
+|60|FrequencyBodyGyroStdDevZ |429| fBodyGyro-std()-Z | X,Y,Z | Frequency | Hz |  |
+|61|FrequencyBodyAccMagMean |503| fBodyAccMag-mean() | scalar | Frequency | Hz |  |
+|62|FrequencyBodyAccMagStdDev |504| fBodyAccMag-std() | scalar | Frequency | Hz |  |
+|63|FrequencyBodyAccJerkMagMean |516| fBodyBodyAccJerkMag-mean() | scalar | Frequency | Hz |  |
+|64|FrequencyBodyAccJerkMagStdDev |517| fBodyBodyAccJerkMag-std() | scalar | Frequency | Hz |  |
+|65|FrequencyBodyGyroMagMean |529| fBodyBodyGyroMag-mean() | scalar | Frequency | Hz |  |
+|66|FrequencyBodyGyroMagStdDev |530| fBodyBodyGyroMag-std() | scalar | Frequency | Hz |  |
+|67|FrequencyBodyGyroJerkMagMean |542| fBodyBodyGyroJerkMag-mean() | scalar | Frequency | Hz |  |
+|68|FrequencyBodyGyroJerkMagStdDev |543| fBodyBodyGyroJerkMag-std() | scalar | Frequency | Hz |  |
+ 
