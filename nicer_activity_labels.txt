@@ -1,3 +1,5 @@
+# This file maps the raw activities onto a set of tidy activity names
+#
 1 walking
 2 walkingupstairs
 3 walkingdownstairs
