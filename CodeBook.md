@@ -13,8 +13,6 @@ This table maps the tidy variables (columns) to the raw variables (columns).
 The "Raw Variable" column is the name of the variable from the original dataset.  The "Raw Col" column is the column position 
 from the original dataset.
 
-"FFT" means this variable set was produced with a Fast Fourier Transform on the time domain measurements.  "time" in this column means the variables were created directly from time domain signals.
-
 The following definitions are used in the below "Variable Translation Table"
 
 Some of the variables use abbreviated terms to keep the length of the column name to a reasonable size.
@@ -26,6 +24,8 @@ Some of the variables use abbreviated terms to keep the length of the column nam
 |y_xxxx.txt | The train/y_train.txt or test/y_test.txt file  |
 |Accel | Abbrv. Acceleration |
 |StdDev | Abbrv. Standard deviation |
+|Time |The variable was created with time domain signal from an accelerometer or gyro.|
+|Frequency | The variable was created from an FFT on the corresponding time domain accelerometer or gyro signal. |
 |MeanTime | Variable name prefix used to denote the mean of a time.  The mean of the subject/activity pair.   |
 |MeanFrequency | Variable name prefix used to denote the mean of a frequency.  The mean of the subject/activity pair. |
 
