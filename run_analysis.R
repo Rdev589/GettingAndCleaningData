@@ -3,9 +3,15 @@ run_analysis <- function() {
   tidy_data <- build_tidy_dataset()
   tidy_avg_data <- build_avg_tidy_data(tidy_data)
   
-  write.table(tidy_avg_data, file="average_tidy_data.csv", row.name=FALSE)
+  write.table(tidy_avg_data, file="average_tidy_data.txt", row.name=FALSE)
 }
 
+
+view_table <- function() {
+
+  data <- read.table("average_tidy_data.txt")  
+  View(data)
+}
 
 
 build_tidy_dataset <- function() {
@@ -20,7 +26,7 @@ build_tidy_dataset <- function() {
   column_filter <- as.integer(columns[,1])
   
   #----------- read the data
-  activity_labels <- read.table(paste0(data_folder, "/activity_labels.txt"))
+  activity_labels <- read.table("nicer_activity_labels.txt")
   
   #--- read the training only data
   train_dat <- read.table(paste0(data_folder, "/train/X_train.txt"))
@@ -124,4 +130,3 @@ get_root_feature_names <- function() {
   as.character(variable_names)
   
 }
-
