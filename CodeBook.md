@@ -16,10 +16,10 @@ The Spatial column annotates whether this variable group is a scalar (single val
 
 The Derived column annotates the method used to derive this group of variables.  "FFT" means this variable set was produced with a Fast Fourier Transform on the time domain measurements.  "time" in this column means the variables were created directly from time domain signals.
 
-|col|variable|col|variable|type|type|units|description|
----------------------------------------------------------------
-|1|Subject |1| tBodyAcc-mean()-X | scalar | id | unitary | |
-|2|Activity |1| tBodyAcc-mean()-X | scalar | factor | unitary | |
+|tidy col|tidy variable|raw col|raw variable|variable type|derived type|units|description|
+----|--------|----|----------|---------|--------|-----|---------------
+|1|Subject |1| tBodyAcc-mean()-X | id |  | unitary | |
+|2|Activity |1| tBodyAcc-mean()-X | string | |  | |
 |3|TimeBodyAccMeanX |1| tBodyAcc-mean()-X | X,Y,Z | Time | m/s^2 | |
 |4|TimeBodyAccMeanY |2| tBodyAcc-mean()-Y | X,Y,Z | Time | m/s^2 |  |
 |5|TimeBodyAccMeanZ |3| tBodyAcc-mean()-Z | X,Y,Z | Time | m/s^2 |  |
