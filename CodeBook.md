@@ -19,8 +19,8 @@ The "Derived Type" column annotates the method used to derive this group of vari
 
 |Tidy Col|Tidy Variable|Raw Col|Raw Variable|Units|Description|
 ----|--------|----|----------|---------|--------|-----|---------------
-|1|Subject |1| tBodyAcc-mean()-X | id |  | unitary |The subject id from the original data, values 1-30 |
-|2|Activity |1| tBodyAcc-mean()-X | string | |  | The string activity name|
+|1|Subject |1| tBodyAcc-mean()-X | unitary |The subject id from the original data, values 1-30 |
+|2|Activity |1| tBodyAcc-mean()-X |  | The string activity name|
 |3|TimeBodyAccMeanX |1| tBodyAcc-mean()-X |m/s^2 | |
 |4|TimeBodyAccMeanY |2| tBodyAcc-mean()-Y |m/s^2 |  |
 |5|TimeBodyAccMeanZ |3| tBodyAcc-mean()-Z |m/s^2 |  |
