@@ -12,6 +12,9 @@ to the mean and std. dev. of the core measurements.  Thus, variables like "meanF
 Since no direction was given whether to keep the training and test data separate, they were combined for the final table.  The firest tidy data contains a column that designates each row as either "training" or "test".  However, during the averaging process
 to produce the final tidy dataset the training and test data were combined as one dataset.
 
+  
+The varaibles in the final tidy dataset were produced by averaging each of the raw variables by subject and activity.
+
 
 ##Variables (Measurements)
 
