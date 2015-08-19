@@ -18,7 +18,7 @@ The varaibles in the final tidy dataset were produced by averaging each of the r
 
 ##Variables (Measurements)
 
-###Variable Transform Table Description
+###Variable Translation Table Description
 This table maps the tidy variables (columns) to the raw variables (columns).
 
 The "Raw Variable" column is the name of the variable from the original dataset.  The "Raw Col" column is the column position 
