@@ -11,7 +11,7 @@ names for the data, but the script needs to be modified to load from the renamed
 To run the full analysis and produce the table just run the following commands:  
   
   library(dplr)  
-  setwd("<run directory>")  
+  setwd("\<run directory\>")  
   source("run_analysis.R")    
   run_analysis()  
    
